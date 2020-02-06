@@ -1,0 +1,21 @@
+													
+													APPLY LEAVE SYSTEM
+													------------------
+
+ApplyLeaves is a UI based Front End Application. 
+It uses LMSCore Application as a Rest call for all the database operations. 
+
+Developed in = Spring MVC + MongoDB + Spring WebServices
+Tools used 	 = Maven  +  Log4j2
+
+Business Functionality : 
+	1.	getLeaveBalance(Integer emp_id);
+	2.	applyLeave();
+	3.	cancelLeave();
+	4.	updateLeave();	
+	
+	
+Details about configuration: 
+----------------------------
+>>  All the jars dependency added through Maven. 
+>>  Done all the Spring MVC configuration in /WEB-INF/spring-servlet.xml file.
