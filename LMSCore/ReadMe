@@ -1,0 +1,24 @@
+ApplyLeaves is a Spring Boot based Rest Application which uses MongoDB as a database.
+The ApplyLeaves provides Rest Call for all the APIs.
+
+Url: 
+http://localhost:8102/test/leaves/addleave
+{
+	"leaveId": 36,
+	"leaveCode": "ANL_LVE",
+	"leave": "Annual Leave",
+	"leave_days": 15
+}
+
+http://localhost:8102/test/leaves/getallleaves
+
+http://localhost:8102/test/leaves/updateleave
+{
+	"leaveId": 8,
+	"leaveCode": "CSL_LVE",
+	"leave": "Casual Leave",
+	"leave_days": "12"
+}
+
+http://localhost:8102/test/leaves/deleteleave/
+ANL_LVE
