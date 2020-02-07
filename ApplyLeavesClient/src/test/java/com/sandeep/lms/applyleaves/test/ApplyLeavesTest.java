@@ -30,11 +30,14 @@ public class ApplyLeavesTest {
 	
 	@Test
 	public void getLeaveBalanceByEmpID() {
-		System.out.println(applyLeaveService != null ? "obj is not null" : "obj is null" );
-		
-		List<LeaveDetailsDTO> list = applyLeaveService.getLeaveBalanceByEmpID(1);
-		
-		System.out.println(list != null ? "List is not null" : "List is null" );
+		/*
+		 * System.out.println(applyLeaveService != null ? "obj is not null" :
+		 * "obj is null" );
+		 * 
+		 * List<LeaveDetailsDTO> list = applyLeaveService.getLeaveBalanceByEmpID(1);
+		 * 
+		 * System.out.println(list != null ? "List is not null" : "List is null" );
+		 */
 	}
 	
 }
