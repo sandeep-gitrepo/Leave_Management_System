@@ -107,6 +107,7 @@ public class EmployeeController {
 	@RequestMapping(value = "/getAllEmpAction", method = RequestMethod.GET)
 	public String getAllEmployees(Model model) {
 		LOGGER.info("getAllEmployees() method called ============");
+		LOGGER.debug("getAllEmployees() method called ============");
 		
 		List<EmployeeDTO> empList = employeeService.getAllEmployees();
 		model.addAttribute("empList", empList);

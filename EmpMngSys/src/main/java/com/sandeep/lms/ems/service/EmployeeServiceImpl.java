@@ -115,8 +115,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 		try {
 			List<EmployeeDTO> empDTOList = employeeDAO.getAllEmployees();
-			LOGGER.info("All Employees record found successfully.");
-			return empDTOList;
+		//	LOGGER.info("All Employees record found successfully.");
+			LOGGER.error("errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+			throw new MongoException("ERROR ================================");
+			
+		//	return empDTOList;
 		}
 		catch (MongoException e) {
 			LOGGER.error("MongoException: Error occured while finding All Employees record.");
