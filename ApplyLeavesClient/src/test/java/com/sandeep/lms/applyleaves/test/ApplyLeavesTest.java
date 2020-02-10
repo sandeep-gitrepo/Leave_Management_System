@@ -3,8 +3,6 @@
  */
 package com.sandeep.lms.applyleaves.test;
 
-import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.sandeep.lms.applyleaves.dto.LeaveDetailsDTO;
 import com.sandeep.lms.applyleaves.service.ApplyLeaveService;
 
 /**

@@ -82,6 +82,13 @@
 			<version>5.1.1.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- LMS DTO Library -->
+		<dependency>
+			<groupId>com.sandeep.lms.dto.library</groupId>
+			<artifactId>LmsDtoLibrary</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

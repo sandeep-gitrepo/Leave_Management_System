@@ -12,7 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.sandeep.lms.ems.dto.EmployeeDTO;
+import com.sandeep.lms.dto.EmployeeDTO;
 import com.sandeep.lms.ems.service.EmployeeService;
 
 /**
@@ -31,29 +31,30 @@ public class EmpMngSysTest {
 	@Test
 	public void addEmployee() {
 		EmployeeDTO employeeDTO = null;
+		System.out.println("hi");
 	}
 
 	@Test
 	public void editEmployee() {
-		// EmployeeDTO employeeDTO	
-	} 
+		System.out.println("hi");
+	}
 
 	@Test
 	public void getEmployeeByID() {
-		
+		System.out.println("hi");
 	}
 
 	@Test
 	public void deleteEmployee() {
-		
+		System.out.println("hi");
 	}
 
 	@Test
-	public void getAllEmployees(){
+	public void getAllEmployees() {
 		List<EmployeeDTO> list = employeeService.getAllEmployees();
-		
-		if(list != null) {
-			for(EmployeeDTO dto : list) {
+
+		if (list != null) {
+			for (EmployeeDTO dto : list) {
 				System.out.println(dto.getEmpId() + " - " + dto.getEmpName() + " - " + dto.getDesignation());
 			}
 		}

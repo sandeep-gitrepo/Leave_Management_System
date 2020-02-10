@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.sandeep.lms.core.dto.LeaveDTO;
+import com.sandeep.lms.dto.LeaveDTO;
 import com.sandeep.lms.core.service.LeaveService;
 
 /**

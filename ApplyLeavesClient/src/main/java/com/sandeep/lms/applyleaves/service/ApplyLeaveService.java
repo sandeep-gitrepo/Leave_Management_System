@@ -5,7 +5,7 @@ package com.sandeep.lms.applyleaves.service;
 
 import java.util.List;
 
-import com.sandeep.lms.applyleaves.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.LeaveDetailsDTO;
 
 /**
  * @author sandeep.a.kumar

@@ -64,6 +64,13 @@
 			<artifactId>disruptor</artifactId>
 			<version>3.4.2</version>
 		</dependency>
+		
+		<!-- LMS DTO Dependency -->
+		<dependency>
+			<groupId>com.sandeep.lms.dto.library</groupId>
+			<artifactId>LmsDtoLibrary</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -74,7 +81,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-
 		</plugins>
 	</build>
 
