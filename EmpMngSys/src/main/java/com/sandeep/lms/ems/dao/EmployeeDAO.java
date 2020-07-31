@@ -5,7 +5,7 @@ package com.sandeep.lms.ems.dao;
 
 import java.util.List;
 
-import com.sandeep.lms.ems.dto.EmployeeDTO;
+import com.sandeep.lms.dto.EmployeeDTO;
 
 /**
  * @author sandeep.a.kumar

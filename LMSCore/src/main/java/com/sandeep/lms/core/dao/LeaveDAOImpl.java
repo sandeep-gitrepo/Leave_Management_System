@@ -14,8 +14,8 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
-import com.sandeep.lms.core.dto.LeaveDTO;
-import com.sandeep.lms.core.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.LeaveDTO;
+import com.sandeep.lms.dto.LeaveDetailsDTO;
 import com.sandeep.lms.core.exception.LeaveNotFoundException;
 
 /**

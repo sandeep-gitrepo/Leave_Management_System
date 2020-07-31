@@ -3,7 +3,7 @@ package com.sandeep.lms.ems.service;
 import java.util.List;
 
 import com.mongodb.MongoException;
-import com.sandeep.lms.ems.dto.EmployeeDTO;
+import com.sandeep.lms.dto.EmployeeDTO;
 
 public interface EmployeeService {
 

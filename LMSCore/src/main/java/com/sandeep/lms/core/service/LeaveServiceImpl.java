@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sandeep.lms.core.dao.LeaveDAO;
-import com.sandeep.lms.core.dto.LeaveDTO;
-import com.sandeep.lms.core.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.LeaveDTO;
+import com.sandeep.lms.dto.LeaveDetailsDTO;
 
 /**
  * @author sandeep.a.kumar

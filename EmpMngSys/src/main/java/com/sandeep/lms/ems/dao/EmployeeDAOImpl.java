@@ -14,7 +14,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-import com.sandeep.lms.ems.dto.EmployeeDTO;
+import com.sandeep.lms.dto.EmployeeDTO;
 import com.sandeep.lms.ems.factory.MongoFactory;
 
 /**

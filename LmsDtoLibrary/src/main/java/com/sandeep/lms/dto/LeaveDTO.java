@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sandeep.lms.core.dto;
+package com.sandeep.lms.dto;
 
 import java.io.Serializable;
 

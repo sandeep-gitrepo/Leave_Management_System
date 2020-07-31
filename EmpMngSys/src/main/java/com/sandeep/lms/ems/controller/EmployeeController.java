@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.sandeep.lms.ems.dto.EmployeeDTO;
+import com.sandeep.lms.dto.EmployeeDTO;
 import com.sandeep.lms.ems.service.EmployeeService;
 
 /**
+ * Controller Class - 
+ * 
  * @author sandeep.a.kumar
  *
  */
@@ -107,6 +109,7 @@ public class EmployeeController {
 	@RequestMapping(value = "/getAllEmpAction", method = RequestMethod.GET)
 	public String getAllEmployees(Model model) {
 		LOGGER.info("getAllEmployees() method called ============");
+		LOGGER.debug("getAllEmployees() method called ============");
 		
 		List<EmployeeDTO> empList = employeeService.getAllEmployees();
 		model.addAttribute("empList", empList);

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.mongodb.MongoException;
 import com.sandeep.lms.ems.dao.EmployeeDAO;
-import com.sandeep.lms.ems.dto.EmployeeDTO;
+import com.sandeep.lms.dto.EmployeeDTO;
 
 /**
  * @author sandeep.a.kumar
@@ -96,6 +96,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 				throw new MongoException("Error Occured: Employee ID not be null or Zero.");
 			}
 			
+			
+			
 			employeeDAO.deleteEmployee(empId);
 			LOGGER.info("Employee record deleted successfully.");
 		}
@@ -116,6 +118,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		try {
 			List<EmployeeDTO> empDTOList = employeeDAO.getAllEmployees();
 			LOGGER.info("All Employees record found successfully.");
+			
 			return empDTOList;
 		}
 		catch (MongoException e) {
