@@ -1,7 +1,52 @@
-ApplyLeaves is a Spring Boot based Rest Application which uses MongoDB as a database.
-The ApplyLeaves provides Rest Call for all the APIs.
+About the LMSCore Application
+------------------------------
+LMSCore is a Spring Boot based Web Application which uses MongoDB as a database.
+The Application just provides API Services as Rest Call.
 
-Url: 
+
+
+This Application provides below API Services:
+
+1.	LeaveDTO addLeave(LeaveDTO leaveDTO);
+2.	List<LeaveDTO> getAllLeaves();
+3.	LeaveDTO updateLeave(LeaveDTO leaveDTO);
+4.	void deleteLeave(String leaveCode);
+5.	List<LeaveDetailsDTO> getAllLeavesByEmpId(Integer emp_id);
+6.	void updateLeaveDetails(List<LeaveDetailsDTO> ls); 
+
+
+
+
+Dependency
+----------
+Using LmsDtoLibrary for all the DTO classes.
+<!-- LMS DTO Dependency -->
+<dependency>
+	<groupId>com.sandeep.lms.dto.library</groupId>
+	<artifactId>LmsDtoLibrary</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+</dependency>
+
+
+
+Build Executable JAR & Run
+--------------------------
+Step 1 :	Make sure pom.xml should contain.
+			1.	<packaging>jar</packaging>
+			2.	<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+
+Step 2 :	Run the below command:
+			mvn clean package
+
+Step 3 :	Go to /target folder as below:
+ 			c:\lms_wrkspc\Leave_Management_System\LMSCore\java -jar target/LMSCore.jar
+
+
+Url:
+---- 
 http://localhost:8102/test/leaves/addleave
 {
 	"leaveId": 36,
