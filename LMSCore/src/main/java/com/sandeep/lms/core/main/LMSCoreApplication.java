@@ -21,6 +21,3 @@ public class LMSCoreApplication {
 }
 
 //http://localhost:8102/test/leaves/addleave
-
-// Siyanshi Kumari - Shreyansh Kumar
-// Bangalore
