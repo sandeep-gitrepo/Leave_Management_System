@@ -24,4 +24,3 @@ public class LMSCoreApplication {
 
 // Siyanshi Kumari - Shreyansh Kumar
 // Bangalore
-// Rakuten India
