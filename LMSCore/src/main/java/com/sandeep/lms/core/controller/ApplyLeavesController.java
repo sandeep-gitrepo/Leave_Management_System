@@ -86,5 +86,5 @@ public class ApplyLeavesController {
 		leaveService.deleteLeave(leaveCode);
 	}
 
-	// Welcome here...
+
 }
