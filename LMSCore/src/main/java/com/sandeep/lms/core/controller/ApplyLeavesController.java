@@ -86,9 +86,5 @@ public class ApplyLeavesController {
 		leaveService.deleteLeave(leaveCode);
 	}
 
-	// Commit One
-	// Commit Two
-	// Commit Three
-	// Commit Four
-	// Commit Five
+	// Welcome here...
 }
