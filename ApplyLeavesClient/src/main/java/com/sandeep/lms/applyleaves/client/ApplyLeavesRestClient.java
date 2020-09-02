@@ -17,6 +17,11 @@ import com.sandeep.lms.applyleaves.service.ApplyLeaveService;
  *
  */
 
+/*
+ * This class is responsible for REST Call to LMS Core Application. 
+ * 
+ * */
+
 public class ApplyLeavesRestClient {
 
 	Logger LOGGER = LogManager.getLogger(ApplyLeavesRestClient.class);
