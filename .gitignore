@@ -1,0 +1,10 @@
+*~
+target/
+.project
+ApplyLeavesClient/bin/
+ApplyLeavesClient/target/
+EmpMngSys/.classpath
+.settings/
+EmpMngSys/bin/
+LMSCore/bin/
+Servers/
