@@ -69,6 +69,22 @@
 			<artifactId>LmsDtoLibrary</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
+		<!-- this is an optional dependency but this makes our development faster. 
+			This dependency automatically restarts or hot-swap our changes to the running 
+			tomcat server, thus removing the need to restart the application whenever 
+			there are changes in codes -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
+		<!-- Tomcat embedded container -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

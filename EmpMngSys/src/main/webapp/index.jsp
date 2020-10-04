@@ -6,6 +6,6 @@
 		<h1 align="center">Employee Management System</h1>
 		<br />
 		<br />
-		<center><a href="getAllEmpAction">View All Employees</a></center>
+		<center><a href="/getAllEmpAction">View All Employees</a></center>
 	</body>
 </html>

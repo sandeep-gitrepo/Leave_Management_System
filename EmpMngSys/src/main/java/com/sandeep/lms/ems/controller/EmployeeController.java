@@ -19,7 +19,7 @@ import com.sandeep.lms.ems.service.EmployeeService;
 
 /**
  * 
- * @author sandeep.a.kumar
+ * @author sandeep.kumar
  *
  */
 

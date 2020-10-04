@@ -8,9 +8,12 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
 
-import com.sandeep.lms.dto.LeaveDetailsDTO;
 import com.sandeep.lms.applyleaves.service.ApplyLeaveService;
+import com.sandeep.lms.dto.LeaveDetailsDTO;
 
 /**
  * @author sandeep.a.kumar
@@ -21,11 +24,13 @@ import com.sandeep.lms.applyleaves.service.ApplyLeaveService;
  * This class is responsible for REST Call to LMS Core Application. 
  * 
  * */
-
+@Component
 public class ApplyLeavesRestClient {
 
 	Logger LOGGER = LogManager.getLogger(ApplyLeavesRestClient.class);
 
+	static final String MAIN_RESOURCE_URI = "http://localhost:8102/test/leaves/";
+	
 	@Autowired
 	private ApplyLeaveService applyLeaveService;
 	
@@ -35,9 +40,14 @@ public class ApplyLeavesRestClient {
 		return applyLeaveService.getLeaveBalanceByEmpID(emp_id);
 	}
 
-	public void applyLeave() {
+	public @ResponseBody LeaveDetailsDTO applyLeave(LeaveDetailsDTO leaveDetails) {
 		LOGGER.info("ApplyLeavesRestClient: applyLeave() method called ==========");
 		
+		// REST-CALL
+		RestTemplate restTemplate = new RestTemplate();
+		LeaveDetailsDTO leaveDetailsDTO = restTemplate.postForObject(MAIN_RESOURCE_URI + "/applyLeave", leaveDetails, LeaveDetailsDTO.class);
+		
+		return leaveDetailsDTO;
 	}
 
 	public void cancelLeave() {
