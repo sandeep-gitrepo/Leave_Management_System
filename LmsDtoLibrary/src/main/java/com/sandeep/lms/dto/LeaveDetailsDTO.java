@@ -4,6 +4,7 @@
 package com.sandeep.lms.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -28,24 +29,16 @@ public class LeaveDetailsDTO implements Serializable {
 	private Integer current_balance;
 	private Integer negative_balance;
 	private Integer leave_taken;
+	private Integer applied_leaves;
+	private Date start_date;
+	private Date end_date;
+	private Integer totalNoOfDays;
 	
 	/**
 	 * 
 	 */
 	public LeaveDetailsDTO() {
 		// TODO Auto-generated constructor stub
-	}
-
-	public LeaveDetailsDTO(Integer _id, Integer emp_id, Integer leave_id, Integer opening_balance,
-			Integer current_balance, Integer negative_balance, Integer leave_taken) {
-		super();
-		this._id = _id;
-		this.emp_id = emp_id;
-		this.leave_id = leave_id;
-		this.opening_balance = opening_balance;
-		this.current_balance = current_balance;
-		this.negative_balance = negative_balance;
-		this.leave_taken = leave_taken;
 	}
 
 	public Integer get_id() {
@@ -104,4 +97,37 @@ public class LeaveDetailsDTO implements Serializable {
 		this.leave_taken = leave_taken;
 	}
 
+	public Integer getApplied_leaves() {
+		return applied_leaves;
+	}
+
+	public void setApplied_leaves(Integer applied_leaves) {
+		this.applied_leaves = applied_leaves;
+	}
+
+	public Date getStart_date() {
+		return start_date;
+	}
+
+	public void setStart_date(Date start_date) {
+		this.start_date = start_date;
+	}
+
+	public Date getEnd_date() {
+		return end_date;
+	}
+
+	public void setEnd_date(Date end_date) {
+		this.end_date = end_date;
+	}
+
+	public Integer getTotalNoOfDays() {
+		return totalNoOfDays;
+	}
+
+	public void setTotalNoOfDays(Integer totalNoOfDays) {
+		this.totalNoOfDays = totalNoOfDays;
+	}
+
+	
 }

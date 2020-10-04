@@ -12,29 +12,40 @@
 </head>
 <body>
 	<div class="container">
-		<h1 align="center">Employee Management System</h1>
+		<br />
+		<h1 align="center">Apply Leave</h1>
 		<br />
 		<br />
-		<h2 id="article_header" class="text-warning" align="center">Add New Employee Record</h2>
+		<h2 id="article_header" class="text-warning" align="center"></h2>
 		<div></div>
 		<div></div>
-		<form:form method="post" action="addEmpAction">
-			<table id="users_table" class="table">
+		<form:form id="applyLeaveForm" method="post" action="submitApplyLeave">
+			<table id="apply_leave_table" class="table">
 				<tr>
-					<td>Name :</td>
-					<td><form:input path="empName" /></td>
+					<td>Enter Employee ID :</td>
+					<td><form:input path="emp_id" /></td>
 				</tr>
 				<tr>
-					<td>CTC :</td>
-					<td><form:input path="ctc" /></td>
+					<td>Select Leave Type :</td>
+					<td>
+						<form:select path="leave_id">
+							<form:option value="1" label="Annual Leave" />
+							<form:option value="2" label="Medical Leave" />
+							<form:option value="3" label="Casual Leave" />
+							<form:option value="4" label="Paternity Leave" />
+							<form:option value="5" label="Adoption Leave" />
+							<form:option value="6" label="Bereavement Leave" />
+							<form:option value="7" label="Maternity Leave" />
+						</form:select>
+					</td>
 				</tr>
 				<tr>
-					<td>Designation :</td>
-					<td><form:input path="designation" /></td>
+					<td>Enter Start Date :</td>
+					<td><form:input type="date" path="start_date" /></td>
 				</tr>
 				<tr>
-					<td>Department :</td>
-					<td><form:input path="department" /></td>
+					<td>Enter Date Date :</td>
+					<td><form:input type="date" path="end_date" /></td>
 				</tr>
 				<tr>
 					<td></td>
