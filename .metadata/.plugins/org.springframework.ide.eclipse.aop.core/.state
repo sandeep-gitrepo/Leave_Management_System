@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<aop-reference-model>
-<aop-project name="LmsDtoLibrary"/>
-<aop-project name="EmpMngSys"/>
-<aop-project name="LMSCore"/>
-<aop-project name="ApplyLeavesClient"/>
-</aop-reference-model>
