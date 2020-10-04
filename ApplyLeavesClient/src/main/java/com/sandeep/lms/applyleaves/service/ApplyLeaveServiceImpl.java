@@ -8,10 +8,12 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.sandeep.lms.applyleaves.client.ApplyLeavesRestClient;
 import com.sandeep.lms.dto.LeaveDetailsDTO;
 
 /**
@@ -21,8 +23,11 @@ import com.sandeep.lms.dto.LeaveDetailsDTO;
 @Service
 public class ApplyLeaveServiceImpl implements ApplyLeaveService {
 
-	private static final Logger LOGGER = LogManager.getLogger(ApplyLeaveServiceImpl.class);
+	@Autowired
+	private ApplyLeavesRestClient applyLeavesRestClient;
 	
+	private static final Logger LOGGER = LogManager.getLogger(ApplyLeaveServiceImpl.class);
+
 	/**
 	 * 
 	 */
@@ -34,25 +39,27 @@ public class ApplyLeaveServiceImpl implements ApplyLeaveService {
 		LOGGER.info("ApplyLeavesRestClient: getLeaveBalance() method called ==========");
 
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<LeaveDetailsDTO[]> response = restTemplate.getForEntity("http://localhost:8102/test/leaves/getallleaves/{emp_id}", LeaveDetailsDTO[].class);
+		ResponseEntity<LeaveDetailsDTO[]> response = restTemplate
+				.getForEntity("http://localhost:8102/test/leaves/getallleaves/{emp_id}", LeaveDetailsDTO[].class);
 		LeaveDetailsDTO[] list = response.getBody();
-		
+
 		return Arrays.asList(list);
 	}
 
-	public void applyLeave() {
+	public LeaveDetailsDTO applyLeave(LeaveDetailsDTO leaveDetails) {
 		LOGGER.info("ApplyLeavesRestClient: applyLeave() method called ==========");
-		
+
+		return applyLeavesRestClient.applyLeave(leaveDetails);
 	}
 
 	public void cancelLeave() {
 		LOGGER.info("ApplyLeavesRestClient: cancelLeave() method called ==========");
-		
+
 	}
 
 	public void updateLeave() {
 		LOGGER.info("ApplyLeavesRestClient: updateLeave() method called ==========");
-		
+
 	}
-	
+
 }
