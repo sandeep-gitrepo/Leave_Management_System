@@ -1,9 +1,3 @@
 INDEX VERSION 1.131
-C:\LMS\lms_wrkspc_sandeep\Leave_Management_System\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1872182394.index
-\EmpMngSys\src\main\java
-C:\LMS\lms_wrkspc_sandeep\Leave_Management_System\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3203150259.index
-\EmpMngSys\src\main\java
 C:\LMS\lms_wrkspc_sandeep\Leave_Management_System\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3602389577.index
 \ApplyLeavesClient\src\main\java
-C:\LMS\lms_wrkspc_sandeep\Leave_Management_System\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4049229817.index
-\LMSCore\src\main\java
