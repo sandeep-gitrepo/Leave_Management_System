@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author sandeep.a.kumar
  *
  */
-@SpringBootApplication(scanBasePackages = {"com.sandeep.lms.admin"})
+@SpringBootApplication(scanBasePackages = {"com.sandeep.lms"})
 public class LMSAdminMainApplication {
 
 	public static void main(String[] args) {
