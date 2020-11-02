@@ -114,10 +114,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			int id = (int)num;
 					
 			empDTO.setEmpId(id);
-			empDTO.setEmpName(obj.get("emp_name").toString());
-			empDTO.setCtc(Float.valueOf(obj.get("ctc").toString()));
-			empDTO.setDesignation(obj.get("designation").toString());
-			empDTO.setDepartment(obj.get("department").toString());
+			empDTO.setEmpName(String.valueOf(obj.get("emp_name")));
+			empDTO.setCtc(Float.valueOf(String.valueOf(obj.get("ctc"))));
+			empDTO.setDesignation(String.valueOf(obj.get("designation")));
+			empDTO.setDepartment(String.valueOf(obj.get("department")));
 			
 			empList.add(empDTO);
 		}
