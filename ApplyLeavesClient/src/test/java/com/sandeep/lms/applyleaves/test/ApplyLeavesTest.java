@@ -13,7 +13,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import com.sandeep.lms.applyleaves.service.ApplyLeaveService;
 
 /**
- * @author sandeep.a.kumar
+ * @author sandeep.kumar
  *
  */
 

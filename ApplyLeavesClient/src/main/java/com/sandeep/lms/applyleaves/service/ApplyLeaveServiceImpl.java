@@ -3,21 +3,18 @@
  */
 package com.sandeep.lms.applyleaves.service;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import com.sandeep.lms.applyleaves.client.ApplyLeavesRestClient;
 import com.sandeep.lms.dto.LeaveDetailsDTO;
 
 /**
- * @author sandeep.a.kumar
+ * @author sandeep.kumar
  *
  */
 @Service
@@ -38,28 +35,27 @@ public class ApplyLeaveServiceImpl implements ApplyLeaveService {
 	public List<LeaveDetailsDTO> getLeaveBalanceByEmpID(Integer emp_id) {
 		LOGGER.info("ApplyLeavesRestClient: getLeaveBalance() method called ==========");
 
-		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<LeaveDetailsDTO[]> response = restTemplate
-				.getForEntity("http://localhost:8102/test/leaves/getallleaves/{emp_id}", LeaveDetailsDTO[].class);
-		LeaveDetailsDTO[] list = response.getBody();
-
-		return Arrays.asList(list);
+		return applyLeavesRestClient.getLeaveBalanceByEmpID(emp_id);
 	}
 
-	public LeaveDetailsDTO applyLeave(LeaveDetailsDTO leaveDetails) {
+	public void applyLeave(LeaveDetailsDTO leaveDetails) {
 		LOGGER.info("ApplyLeavesRestClient: applyLeave() method called ==========");
 
-		return applyLeavesRestClient.applyLeave(leaveDetails);
+		applyLeavesRestClient.applyLeave(leaveDetails);
 	}
 
-	public void cancelLeave() {
+	public void cancelLeave(LeaveDetailsDTO leaveDetails) {
 		LOGGER.info("ApplyLeavesRestClient: cancelLeave() method called ==========");
 
+		applyLeavesRestClient.cancelLeave(leaveDetails);
+		
 	}
 
-	public void updateLeave() {
+	public void updateLeave(LeaveDetailsDTO leaveDetails) {
 		LOGGER.info("ApplyLeavesRestClient: updateLeave() method called ==========");
 
+		applyLeavesRestClient.updateLeave(leaveDetails);
+		
 	}
 
 }

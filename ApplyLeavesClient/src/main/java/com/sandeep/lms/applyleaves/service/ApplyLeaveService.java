@@ -15,5 +15,10 @@ public interface ApplyLeaveService {
 	
 	List<LeaveDetailsDTO> getLeaveBalanceByEmpID(Integer emp_id);
 
-	LeaveDetailsDTO applyLeave(LeaveDetailsDTO leaveDetails);
+	void applyLeave(LeaveDetailsDTO leaveDetails);
+	
+	void cancelLeave(LeaveDetailsDTO leaveDetailsDTO);
+	
+	void updateLeave(LeaveDetailsDTO leaveDetailsDTO);
+	
 }

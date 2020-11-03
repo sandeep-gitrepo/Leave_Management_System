@@ -39,7 +39,7 @@ public class ApplyLeavesController {
 		leav.setEmp_id(2);
 		leav.setLeave_id(3);
 
-		LeaveDetailsDTO leaveDetailsDTO = applyLeaveService.applyLeave(leav);
+		applyLeaveService.applyLeave(leav);
 
 		return "applyLeave";
 	}
