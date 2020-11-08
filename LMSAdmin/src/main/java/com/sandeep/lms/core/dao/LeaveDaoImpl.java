@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sandeep.lms.admin.dao;
+package com.sandeep.lms.core.dao;
 
 import java.util.List;
 

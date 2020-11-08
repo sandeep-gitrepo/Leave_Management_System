@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sandeep.lms.core.dao.LeaveDAO;
+import com.sandeep.lms.core.dao.LeaveDao;
 import com.sandeep.lms.dto.LeaveDTO;
 import com.sandeep.lms.dto.LeaveDetailsDTO;
 
@@ -25,7 +25,7 @@ public class LeaveServiceImpl implements LeaveService {
 	private static final Logger LOGGER = LogManager.getLogger(LeaveServiceImpl.class);
 	
 	@Autowired
-	private LeaveDAO leaveDAO;
+	private LeaveDao leaveDAO;
 	
 	@Override
 	public LeaveDTO addLeave(LeaveDTO leaveDTO) {
@@ -78,6 +78,13 @@ public class LeaveServiceImpl implements LeaveService {
 	@Override
 	public void updateLeaveDetails(List<LeaveDetailsDTO> ls) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public LeaveDetailsDTO applyLeave(LeaveDetailsDTO leaveDTO) {
+
+		return leaveDAO.applyLeave(leaveDTO);
 		
 	}
 	

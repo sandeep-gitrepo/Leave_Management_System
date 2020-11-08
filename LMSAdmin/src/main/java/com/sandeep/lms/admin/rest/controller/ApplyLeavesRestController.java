@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.fasterxml.jackson.databind.util.Converter;
-import com.sandeep.lms.admin.service.LeaveService;
+import com.sandeep.lms.core.service.LeaveService;
 import com.sandeep.lms.dto.LeaveDTO;
 import com.sandeep.lms.dto.LeaveDetailsDTO;
 

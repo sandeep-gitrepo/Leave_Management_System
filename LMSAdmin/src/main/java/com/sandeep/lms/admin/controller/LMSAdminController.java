@@ -16,7 +16,7 @@ import com.sandeep.lms.dto.LeaveDetailsDTO;
 @Controller
 @SessionAttributes("name")
 public class LMSAdminController {
-	// test 2121
+	
 	@Autowired
 	private AdminService adminService;
 	

@@ -25,5 +25,7 @@ public interface LeaveService {
 	List<LeaveDetailsDTO> getAllLeavesByEmpId(Integer emp_id);
 	
 	void updateLeaveDetails(List<LeaveDetailsDTO> ls);
+
+	LeaveDetailsDTO applyLeave(LeaveDetailsDTO leaveDTO);
 	
 }
