@@ -31,6 +31,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 		LOGGER.info("EmployeeServiceImpl: addEmployee() method called ===============");
 		
 		try {
+			if(employeeDTO.getEmpName() == null || employeeDTO.getEmpName().isEmpty()) {
+				LOGGER.error("MongoException: Employee Name must not be empty");
+				throw new MongoException("MongoException: Employee Name must not be empty");
+			}
+			
+			
 			employeeDAO.addEmployee(employeeDTO);
 			LOGGER.info("Employee record inserted successfully.");
 		}

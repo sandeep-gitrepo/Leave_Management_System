@@ -19,8 +19,9 @@
 			<td>${emp.ctc}</td>
 			<td>${emp.designation}</td>
 			<td>${emp.department}</td>
-			<td><a href="editEmpForm/${emp.empId}">Edit</a></td>
-			<td><a href="deleteEmpForm/${emp.empId}">Delete</a></td>
+			<td><a href="addemp">Add New Employee</a></td>
+			<td><a href="editEmpForm">Edit</a></td>
+			<td><a href="<c:url value='/deleteEmpForm/${emp.empId}' />" >Delete</a></td>
 		</tr>
 	</c:forEach>
 </table>

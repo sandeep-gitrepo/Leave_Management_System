@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+C:\LMS\lms_wrkspc_sandeep\Leave_Management_System\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-4257476555.index
-421478477.index
-2151675430.index
-257667161.index
-3271740660.index
-1484552375.index
-3934840038.index

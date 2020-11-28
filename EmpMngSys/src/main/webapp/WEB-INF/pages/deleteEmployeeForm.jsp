@@ -18,7 +18,7 @@
 		<h2 id="article_header" class="text-warning" align="center">Delete Employee Record</h2>
 		<div></div>
 		<div></div>
-		<form:form action="deleteEmpAction">
+		<form:form method="get" action="deleteEmpAction">
 			<table id="users_table" class="table">
 				<tr>
 					<td>Name :</td>

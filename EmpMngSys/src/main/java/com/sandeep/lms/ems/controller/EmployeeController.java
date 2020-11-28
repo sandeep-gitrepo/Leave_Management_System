@@ -58,13 +58,13 @@ public class EmployeeController {
 		return "viewEmployeeForm";
 	}
 	
-	@RequestMapping(value = "/editEmpForm/{empId}", method = RequestMethod.GET)
-	public String editEmployeeForm(@PathVariable Integer empId, Model model) {
+	@RequestMapping(value = "/editEmpForm", method = RequestMethod.POST)
+	public String editEmployeeForm(Model model, EmployeeDTO employeeDTO) {
 		LOGGER.info("editEmployeeForm() method called ============");
-		
-		EmployeeDTO empDTO = employeeService.getEmployeeByID(empId);
-		model.addAttribute("command", empDTO);
-		
+		model.addAttribute("command", new EmployeeDTO());  
+	//	EmployeeDTO empDTO = employeeService.getEmployeeByID(empId);
+	//	model.addAttribute("command", empDTO);
+		getAllEmployees(model);
 		return "editEmployeeForm";
 	}
 	
@@ -87,12 +87,12 @@ public class EmployeeController {
 		return "deleteEmployeeForm";
 	}
 	
-	@RequestMapping(value = "/deleteEmpAction/{empId}", method = RequestMethod.GET)
-	public String deleteEmployee(@PathVariable("empId") Integer empId, Model m) {
+	@RequestMapping(value = "/deleteEmpAction")
+	public String deleteEmployee(Model m) {
 		LOGGER.info("deleteEmployee() method called ============");
-		
-		employeeService.deleteEmployee(empId);
-		getAllEmployees(m);
+		System.out.println("===========================================================================");
+	//	employeeService.deleteEmployee(empId);
+	//	getAllEmployees(m);
 		
 		return "viewEmployeeForm";
 	}
