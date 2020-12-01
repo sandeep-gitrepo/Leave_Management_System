@@ -13,12 +13,10 @@ import com.sandeep.lms.dto.LeaveDetailsDTO;
  */
 public interface AdminService {
 
-	List<LeaveDetailsDTO> getAllPendingLeaves();
+	List<LeaveDetailsDTO> getLeavesByLeaveStatus(String leave_status);
 
-	List<LeaveDetailsDTO> getAllApprovedLeaves();
-	
-	List<LeaveDetailsDTO> getAllRejectedLeaves();
-	
 	void updateLeaveDetails(LeaveDetailsDTO leaveDtlDto);
+
+	LeaveDetailsDTO getLeaveDetailsDTOById(Integer id);
 	
 }

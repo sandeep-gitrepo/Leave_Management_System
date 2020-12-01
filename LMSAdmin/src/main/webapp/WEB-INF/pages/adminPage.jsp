@@ -13,15 +13,15 @@
 		
 		
 		
-		<a href="/getAllPendingLeaves">View All Pending Leaves</a>
+		<a href="getAllPendingLeaves">View All Pending Leaves</a>
 		
 		<br /><br />
 		
-		<a href="/getAllApprovedLeaves">View All Approved Leaves</a>
+		<a href="getAllApprovedLeaves">View All Approved Leaves</a>
 		
 		<br /><br />
 		
-		<a href="/getAllRejectedLeaves">View All Rejected Leaves</a>
+		<a href="getAllRejectedLeaves">View All Rejected Leaves</a>
 		
 		<br /><br />
 		

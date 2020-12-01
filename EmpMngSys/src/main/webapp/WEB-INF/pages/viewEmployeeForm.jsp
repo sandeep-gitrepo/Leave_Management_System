@@ -1,4 +1,3 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <h1 align="center">Employee Management System</h1>
 <h2>Employees List</h2>
@@ -19,7 +18,6 @@
 			<td>${emp.ctc}</td>
 			<td>${emp.designation}</td>
 			<td>${emp.department}</td>
-			<td><a href="addemp">Add New Employee</a></td>
 			<td><a href="editEmpForm">Edit</a></td>
 			<td><a href="<c:url value='/deleteEmpForm/${emp.empId}' />" >Delete</a></td>
 		</tr>

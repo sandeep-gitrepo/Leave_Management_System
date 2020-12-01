@@ -21,3 +21,5 @@ public class LMSAdminMainApplication {
 }
 
 //     http://localhost:8102/test/leaves/getallleaves
+
+//		http://localhost:8102/test/

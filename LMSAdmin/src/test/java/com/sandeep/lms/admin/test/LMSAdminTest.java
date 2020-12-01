@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.sandeep.lms.admin.constant.LMSAdminConstant;
 import com.sandeep.lms.admin.service.AdminService;
 import com.sandeep.lms.dto.LeaveDetailsDTO;
 
@@ -29,7 +30,7 @@ public class LMSAdminTest {
 	@RequestMapping(value = "/getAllPendingLeaves", method = RequestMethod.POST)
 	@ResponseBody
 	public String getAllPendingLeaves(Model model) {
-		List<LeaveDetailsDTO> pendingLeaveList = adminService.getAllPendingLeaves();
+		List<LeaveDetailsDTO> pendingLeaveList = adminService.getLeavesByLeaveStatus(LMSAdminConstant.LMS_LEAVE_STATUS_PENDING);
 		model.addAttribute("pendingLeaveList", pendingLeaveList);
 
 		return "pendingLeaves";

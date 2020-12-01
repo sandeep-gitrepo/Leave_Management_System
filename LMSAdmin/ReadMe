@@ -47,6 +47,8 @@ Step 3 :	Go to /target folder as below:
 
 Url:
 ---- 
+Main URL : http://localhost:8102/test/
+
 http://localhost:8102/test/leaves/addleave
 {
 	"leaveId": 36,

@@ -27,24 +27,20 @@ public class AdminServiceImpl implements AdminService {
 	private AdminDao adminDAO;
 
 	@Override
-	public List<LeaveDetailsDTO> getAllPendingLeaves() {
-		return adminDAO.getAllPendingLeaves();
-	}
-
-	@Override
-	public List<LeaveDetailsDTO> getAllApprovedLeaves() {
-		return adminDAO.getAllApprovedLeaves();
-	}
-
-	@Override
-	public List<LeaveDetailsDTO> getAllRejectedLeaves() {
-		return adminDAO.getAllRejectedLeaves();
+	public List<LeaveDetailsDTO> getLeavesByLeaveStatus(String leave_Status) {
+		return adminDAO.getLeavesByLeaveStatus(leave_Status);
 	}
 
 	@Override
 	public void updateLeaveDetails(LeaveDetailsDTO leaveDtlDto) {
 		adminDAO.updateLeaveDetails(leaveDtlDto);
 		
+	}
+
+	@Override
+	public LeaveDetailsDTO getLeaveDetailsDTOById(Integer id) {
+		
+		return adminDAO.getLeaveDetailsDTOById(id);
 	}
 	
 	
