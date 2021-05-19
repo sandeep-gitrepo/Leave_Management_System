@@ -37,6 +37,14 @@
 					<td><form:input path="department" /></td>
 				</tr>
 				<tr>
+					<td>Email ID :</td>
+					<td><form:input path="email" /></td>
+				</tr>
+				<tr>
+					<td>Password :</td>
+					<td><form:input path="password" /></td>
+				</tr>
+				<tr>
 					<td></td>
 					<td><input type="submit" value="SAVE" /></td>
 				</tr>

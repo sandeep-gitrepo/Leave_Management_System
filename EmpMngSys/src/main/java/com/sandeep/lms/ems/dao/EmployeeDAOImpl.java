@@ -46,6 +46,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		obj.put("ctc", employeeDTO.getCtc());
 		obj.put("designation", employeeDTO.getDesignation());
 		obj.put("department", employeeDTO.getDepartment());
+		obj.put("email", employeeDTO.getEmail());
+		obj.put("password", employeeDTO.getPassword());
 		
 		collection.insert(obj);
 	}
@@ -118,6 +120,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			empDTO.setCtc(Float.valueOf(String.valueOf(obj.get("ctc"))));
 			empDTO.setDesignation(String.valueOf(obj.get("designation")));
 			empDTO.setDepartment(String.valueOf(obj.get("department")));
+			empDTO.setEmail(String.valueOf(obj.get("email")));
 			
 			empList.add(empDTO);
 		}

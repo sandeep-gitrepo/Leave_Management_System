@@ -1,0 +1,16 @@
+use lmsDB
+db.createCollection("employee")
+db.createCollection("leave")
+db.createCollection("emp_leaves_details")
+db.createCollection("emp_applied_leaves")
+db.createCollection("emp_applied_leaves_his")
+
+db.employee.insertOne({_id: 1, emp_name: 'Shree Ram', ctc: 5, designation: 'Manager', department: 'Sales', email: 'ram@gmail.com', password: 'pass123'})
+
+db.leave.insertOne({_id: 1, leave_code: 'ANL_LVE', leave: 'Annual Leave', leave_days: 16})
+db.leave.insertOne({_id: 2, leave_code: 'MDL_LVE', leave: 'Medical Leave', leave_days: 12})
+db.leave.insertOne({_id: 3, leave_code: 'CSL_LVE', leave: 'Casual Leave', leave_days: 12})
+
+db.emp_leaves_details.insertOne({_id: 1, emp_id: 1, leave_type: 'Medical Leave', total_leaves: 12, balance_leaves: 8, is_enabled: 'Yes', created_date: '01-01-2021', updated_date: '18-05-2021'})
+
+db.emp_applied_leaves.insertOne({_id: 1, emp_id: 1, leave_type: 'Medical Leave', leave_start_date: '12-5-2021', leave_end_date: '15-05-2021', total_days: 4, leave_applied_date: '12-05-2021', status: 'Pending', remarks: 'test'})
