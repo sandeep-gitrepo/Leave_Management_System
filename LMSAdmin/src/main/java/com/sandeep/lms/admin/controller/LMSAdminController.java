@@ -5,16 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.sandeep.lms.admin.constant.LMSAdminConstant;
 import com.sandeep.lms.admin.service.AdminService;
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmpAppliedLeaveDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 @Controller
 @SessionAttributes("name")
@@ -32,7 +31,7 @@ public class LMSAdminController {
 	@RequestMapping(value = "/getAllPendingLeaves", method = RequestMethod.GET)
 	public String getAllPendingLeaves(Model model) {
 		
-		List<LeaveDetailsDTO> pendingLeaveList = adminService.getLeavesByLeaveStatus(LMSAdminConstant.LMS_LEAVE_STATUS_PENDING);
+		List<EmpAppliedLeaveDTO> pendingLeaveList = adminService.getLeavesByLeaveStatus(LMSAdminConstant.LMS_LEAVE_STATUS_PENDING);
 		model.addAttribute("pendingLeaveList", pendingLeaveList);
 
 		return "pendingLeaves";
@@ -41,7 +40,7 @@ public class LMSAdminController {
 	@RequestMapping(value = "/getAllApprovedLeaves", method = RequestMethod.GET)
 	public String getAllApprovedLeaves(Model model) {
 		
-		List<LeaveDetailsDTO> approvedLeaveList = adminService.getLeavesByLeaveStatus(LMSAdminConstant.LMS_LEAVE_STATUS_APPROVED);
+		List<EmpAppliedLeaveDTO> approvedLeaveList = adminService.getLeavesByLeaveStatus(LMSAdminConstant.LMS_LEAVE_STATUS_APPROVED);
 		model.addAttribute("approvedLeaveList", approvedLeaveList);
 		
 		return "approvedLeaves";
@@ -50,16 +49,17 @@ public class LMSAdminController {
 	@RequestMapping(value = "/getAllRejectedLeaves", method = RequestMethod.GET)
 	public String getAllRejectedLeaves(Model model) {
 
-		List<LeaveDetailsDTO> rejectedLeaveList = adminService.getLeavesByLeaveStatus(LMSAdminConstant.LMS_LEAVE_STATUS_REJECTED);
+		List<EmpAppliedLeaveDTO> rejectedLeaveList = adminService.getLeavesByLeaveStatus(LMSAdminConstant.LMS_LEAVE_STATUS_REJECTED);
 		model.addAttribute("rejectedLeaveList", rejectedLeaveList);
 		
 		return "rejectedLeaves";
 	}
 
-	@RequestMapping(value = "/approveLeaves/{id}", method = RequestMethod.GET)
-	public String approveLeaves(Model model, @PathVariable("id") Integer id) {
+	@RequestMapping(value = "/submitLeaves", method = RequestMethod.POST)
+	public String submitLeaves(Model model) {
 
-		LeaveDetailsDTO leaveDtlDTO = adminService.getLeaveDetailsDTOById(id);
+		System.out.println("==================================================>>>>>>>>>>>>>>>>");
+		EmployeeLeaveDetailsDTO leaveDtlDTO = adminService.getLeaveDetailsDTOById(9);
 
 		// Updating LeaveDetailsDTO with status 'Approved'
 		leaveDtlDTO.setStatus("Approved");
@@ -72,7 +72,7 @@ public class LMSAdminController {
 		
 		adminService.updateLeaveDetails(leaveDtlDTO);
 
-		model.addAttribute("leaveDtlDTO", leaveDtlDTO);
+	//	model.addAttribute("leaveDtlDTO", leaveDtlDTO);
 
 		return "successApprovedLeaves";
 	}
@@ -80,7 +80,7 @@ public class LMSAdminController {
 	@RequestMapping(value = "/rejectLeaves/{id}", method = RequestMethod.GET)
 	public String rejectLeaves(Model model, @PathVariable("id") Integer id) {
 
-		LeaveDetailsDTO leaveDtlDTO = adminService.getLeaveDetailsDTOById(id);
+		EmployeeLeaveDetailsDTO leaveDtlDTO = adminService.getLeaveDetailsDTOById(id);
 
 		// Updating LeaveDetailsDTO with status 'Rejected'
 		leaveDtlDTO.setStatus("Rejected");

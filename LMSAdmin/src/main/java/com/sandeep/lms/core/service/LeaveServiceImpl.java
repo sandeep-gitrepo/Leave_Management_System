@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.sandeep.lms.core.dao.LeaveDao;
 import com.sandeep.lms.dto.LeaveDTO;
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 /**
  * @author sandeep.a.kumar
@@ -70,19 +70,19 @@ public class LeaveServiceImpl implements LeaveService {
 	}
 
 	@Override
-	public List<LeaveDetailsDTO> getAllLeavesByEmpId(Integer emp_id) {
+	public List<EmployeeLeaveDetailsDTO> getAllLeavesByEmpId(Integer emp_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void updateLeaveDetails(List<LeaveDetailsDTO> ls) {
+	public void updateLeaveDetails(List<EmployeeLeaveDetailsDTO> ls) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public LeaveDetailsDTO applyLeave(LeaveDetailsDTO leaveDTO) {
+	public EmployeeLeaveDetailsDTO applyLeave(EmployeeLeaveDetailsDTO leaveDTO) {
 
 		return leaveDAO.applyLeave(leaveDTO);
 		

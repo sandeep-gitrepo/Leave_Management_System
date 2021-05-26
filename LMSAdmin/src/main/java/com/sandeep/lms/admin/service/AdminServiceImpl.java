@@ -12,7 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sandeep.lms.admin.dao.AdminDao;
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmpAppliedLeaveDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 /**
  * @author sandeep.a.kumar
@@ -27,18 +28,18 @@ public class AdminServiceImpl implements AdminService {
 	private AdminDao adminDAO;
 
 	@Override
-	public List<LeaveDetailsDTO> getLeavesByLeaveStatus(String leave_Status) {
+	public List<EmpAppliedLeaveDTO> getLeavesByLeaveStatus(String leave_Status) {
 		return adminDAO.getLeavesByLeaveStatus(leave_Status);
 	}
 
 	@Override
-	public void updateLeaveDetails(LeaveDetailsDTO leaveDtlDto) {
+	public void updateLeaveDetails(EmployeeLeaveDetailsDTO leaveDtlDto) {
 		adminDAO.updateLeaveDetails(leaveDtlDto);
 		
 	}
 
 	@Override
-	public LeaveDetailsDTO getLeaveDetailsDTOById(Integer id) {
+	public EmployeeLeaveDetailsDTO getLeaveDetailsDTOById(Integer id) {
 		
 		return adminDAO.getLeaveDetailsDTOById(id);
 	}

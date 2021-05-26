@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sandeep.lms.applyleaves.client.ApplyLeavesRestClient;
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 /**
  * @author sandeep.kumar
@@ -32,26 +32,26 @@ public class ApplyLeaveServiceImpl implements ApplyLeaveService {
 		// TODO Auto-generated constructor stub
 	}
 
-	public List<LeaveDetailsDTO> getLeaveBalanceByEmpID(Integer emp_id) {
+	public List<EmployeeLeaveDetailsDTO> getLeaveBalanceByEmpID(Integer emp_id) {
 		LOGGER.info("ApplyLeavesRestClient: getLeaveBalance() method called ==========");
 
 		return applyLeavesRestClient.getLeaveBalanceByEmpID(emp_id);
 	}
 
-	public void applyLeave(LeaveDetailsDTO leaveDetails) {
+	public void applyLeave(EmployeeLeaveDetailsDTO leaveDetails) {
 		LOGGER.info("ApplyLeavesRestClient: applyLeave() method called ==========");
 
 		applyLeavesRestClient.applyLeave(leaveDetails);
 	}
 
-	public void cancelLeave(LeaveDetailsDTO leaveDetails) {
+	public void cancelLeave(EmployeeLeaveDetailsDTO leaveDetails) {
 		LOGGER.info("ApplyLeavesRestClient: cancelLeave() method called ==========");
 
 		applyLeavesRestClient.cancelLeave(leaveDetails);
 		
 	}
 
-	public void updateLeave(LeaveDetailsDTO leaveDetails) {
+	public void updateLeave(EmployeeLeaveDetailsDTO leaveDetails) {
 		LOGGER.info("ApplyLeavesRestClient: updateLeave() method called ==========");
 
 		applyLeavesRestClient.updateLeave(leaveDetails);

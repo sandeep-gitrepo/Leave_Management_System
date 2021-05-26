@@ -20,7 +20,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.sandeep.lms.core.service.LeaveService;
 import com.sandeep.lms.dto.LeaveDTO;
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 /**
  * @author sandeep.kumar
@@ -87,11 +87,11 @@ public class ApplyLeavesRestController {
 	}
 
 	@RequestMapping(value = "/applyLeave", method = RequestMethod.POST)
-	public LeaveDetailsDTO applyLeave(@RequestBody LeaveDetailsDTO leaveDTO) {
+	public EmployeeLeaveDetailsDTO applyLeave(@RequestBody EmployeeLeaveDetailsDTO leaveDTO) {
 		LOGGER.info("ApplyLeavesController - addLeave method called ==========");
 		LOGGER.debug("ApplyLeavesController - addLeave method called ==========");
 
-		LeaveDetailsDTO leaveDetailsDTO = leaveService.applyLeave(leaveDTO);
+		EmployeeLeaveDetailsDTO leaveDetailsDTO = leaveService.applyLeave(leaveDTO);
 
 		LOGGER.info("ApplyLeavesController - addLeave method ended ==========");
 		LOGGER.debug("ApplyLeavesController - addLeave method endled ==========");

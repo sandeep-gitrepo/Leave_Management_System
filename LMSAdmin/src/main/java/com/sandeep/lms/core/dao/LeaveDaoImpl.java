@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 
 import com.sandeep.lms.admin.exception.LeaveNotFoundException;
 import com.sandeep.lms.dto.LeaveDTO;
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 /**
  * @author sandeep.kumar
@@ -131,11 +131,11 @@ public class LeaveDaoImpl implements LeaveDao {
 	}
 
 	@Override
-	public List<LeaveDetailsDTO> getAllLeavesByEmpId(Integer emp_id) {
+	public List<EmployeeLeaveDetailsDTO> getAllLeavesByEmpId(Integer emp_id) {
 		LOGGER.info("LeaveDaoImpl - getAllLeavesByEmpId() method Started ======");
 		LOGGER.debug("LeaveDaoImpl - getAllLeavesByEmpId() method Started ======");
 		
-		List<LeaveDetailsDTO> leaveDtls = null;
+		List<EmployeeLeaveDetailsDTO> leaveDtls = null;
 		try {
 	//		leaveDtls = mongoTemplate.findAl(LeaveDetailsDTO.class);
 		}
@@ -150,13 +150,13 @@ public class LeaveDaoImpl implements LeaveDao {
 	}
 
 	@Override
-	public void updateLeaveDetails(List<LeaveDetailsDTO> ls) {
+	public void updateLeaveDetails(List<EmployeeLeaveDetailsDTO> ls) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public LeaveDetailsDTO applyLeave(LeaveDetailsDTO leaveDTO) {
+	public EmployeeLeaveDetailsDTO applyLeave(EmployeeLeaveDetailsDTO leaveDTO) {
 		return mongoTemplate.save(leaveDTO);
 	}
 

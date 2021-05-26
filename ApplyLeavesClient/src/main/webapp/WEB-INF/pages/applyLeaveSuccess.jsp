@@ -12,11 +12,46 @@
 </head>
 <body>
 	<div class="container">
-		<h1 align="center">Apply Leaves Success...</h1>
+		<h1 align="center">Your Leaves have been applied successfully...</h1>
 		<br />
 		<br />
-		<h2 id="article_header" class="text-warning" align="center"></h2>
-		<div></div>
+		
+		<table id="apply_leave_table" class="table">
+				<tr>
+					<td>Leave Type :</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Leave Start Date :</td>
+					<td><form:input type="date" path="start_date" /></td>
+				</tr>
+				<tr>
+					<td>Leave End Date :</td>
+					<td><form:input type="date" path="end_date" /></td>
+				</tr>
+				<tr>
+					<td>No of Days Applied Leave :</td>
+					<td><form:input type="date" path="end_date" /></td>
+				</tr>
+				<tr>
+					<td>Leave Remaining :</td>
+					<td><form:input type="date" path="end_date" /></td>
+				</tr>
+				<tr>
+					<td>Remarks :</td>
+					<td><form:input type="text" path="remarks" /></td>
+				</tr>
+				<tr>
+					<td>Leave Status :</td>
+					<td><form:input type="date" path="end_date" /></td>
+				</tr>
+		</table>		
+		
+		<br />
+		<br />
+		
+		<a href="#">Click here to Goto Leave Apply Page</a>
+		
 	</div>
 </body>
 </html>

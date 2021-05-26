@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sandeep.lms.applyleaves.service.ApplyLeaveService;
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 /**
  * @author sandeep.kumar
@@ -25,7 +25,9 @@ public class ApplyLeavesController {
 	@RequestMapping(value = "/")
 	public String applyLeave(Model m) {
 
-		m.addAttribute("command", new LeaveDetailsDTO());
+		
+		
+		m.addAttribute("command", new EmployeeLeaveDetailsDTO());
 
 		return "applyLeave";
 	}
@@ -33,7 +35,7 @@ public class ApplyLeavesController {
 	@RequestMapping(value = "/submitApplyLeave", method = RequestMethod.POST)
 	public String submit(Model m) {
 
-		LeaveDetailsDTO leav = new LeaveDetailsDTO();
+		EmployeeLeaveDetailsDTO leav = new EmployeeLeaveDetailsDTO();
 
 		leav.set_id(2);
 		leav.setEmp_id(2);

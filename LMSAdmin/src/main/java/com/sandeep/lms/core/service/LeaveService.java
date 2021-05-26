@@ -6,7 +6,7 @@ package com.sandeep.lms.core.service;
 import java.util.List;
 
 import com.sandeep.lms.dto.LeaveDTO;
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 /**
  * @author sandeep.a.kumar
@@ -22,10 +22,10 @@ public interface LeaveService {
 
 	void deleteLeave(String leaveCode);
 
-	List<LeaveDetailsDTO> getAllLeavesByEmpId(Integer emp_id);
+	List<EmployeeLeaveDetailsDTO> getAllLeavesByEmpId(Integer emp_id);
 	
-	void updateLeaveDetails(List<LeaveDetailsDTO> ls);
+	void updateLeaveDetails(List<EmployeeLeaveDetailsDTO> ls);
 
-	LeaveDetailsDTO applyLeave(LeaveDetailsDTO leaveDTO);
+	EmployeeLeaveDetailsDTO applyLeave(EmployeeLeaveDetailsDTO leaveDTO);
 	
 }

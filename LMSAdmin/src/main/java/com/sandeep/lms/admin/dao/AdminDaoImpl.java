@@ -18,7 +18,8 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.sandeep.lms.admin.mongo.factory.MongoFactory;
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmpAppliedLeaveDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 /**
  * @author sandeep.kumar
@@ -30,51 +31,46 @@ public class AdminDaoImpl implements AdminDao {
 	private static final Logger LOGGER = LogManager.getLogger(AdminDaoImpl.class);
 
 	@Override
-	public List<LeaveDetailsDTO> getLeavesByLeaveStatus(String leave_status) {
+	public List<EmpAppliedLeaveDTO> getLeavesByLeaveStatus(String leave_status) {
 
 		DBObject query = BasicDBObjectBuilder.start().add("status", leave_status).get();
-
-		DBCollection collection = MongoFactory.getDBCollection("emp_leaves_details");
+		DBCollection collection = MongoFactory.getDBCollection("emp_applied_leaves");
 		DBCursor dbCursor = collection.find(query);
 
-		List<LeaveDetailsDTO> leaveDtlList = new ArrayList<LeaveDetailsDTO>(dbCursor.size());
+		List<EmpAppliedLeaveDTO> empAppliedLeavesList = new ArrayList<EmpAppliedLeaveDTO>(dbCursor.size());
 
 		while (dbCursor.hasNext()) {
 			DBObject obj = dbCursor.next();
-
-			LeaveDetailsDTO DTO = prepareLeaveDetailsDTO(obj);
-
-			leaveDtlList.add(DTO);
+			EmpAppliedLeaveDTO DTO = prepareEmpAppliedLeaveDTO(obj);
+			empAppliedLeavesList.add(DTO);
 		}
 
-		return leaveDtlList;
+		return empAppliedLeavesList;
 	}
 
-	private LeaveDetailsDTO prepareLeaveDetailsDTO(DBObject obj) {
-		
-		LeaveDetailsDTO DTO = new LeaveDetailsDTO();
-		
+	private EmpAppliedLeaveDTO prepareEmpAppliedLeaveDTO(DBObject obj) {
+
+		EmpAppliedLeaveDTO DTO = new EmpAppliedLeaveDTO();
+
 		double id = Double.valueOf(obj.get("_id").toString());
 		DTO.set_id((int) id);
 
 		double num = Double.valueOf(obj.get("emp_id").toString());
 		DTO.setEmp_id((int) num);
 
-		double leaveId = Double.valueOf(obj.get("leave_id").toString());
-		DTO.setLeave_id((int) leaveId);
+	//	double leaveId = Double.valueOf(obj.get("leave_id").toString());
+	//	DTO.setLeave_id((int) leaveId);
 
 		setEmployeeName(DTO);
-
-		setLeaveTypeName(DTO);
-
-		DTO.setTotal_leaves(getBalance(String.valueOf(obj.get("total_leaves"))));
-		DTO.setLeave_taken(getBalance(String.valueOf(obj.get("leave_taken"))));
-		DTO.setCurrent_balance(getBalance(String.valueOf(obj.get("leave_balance"))));
+		DTO.setLeave_type(String.valueOf(obj.get("leave_type")));
+		DTO.setLeave_applied_date(String.valueOf(obj.get("leave_applied_date")));
+		DTO.setLeave_start_date(String.valueOf(obj.get("leave_start_date")));
+		DTO.setLeave_end_date(String.valueOf(obj.get("leave_end_date")));
+		DTO.setStatus(String.valueOf(obj.get("status")));
+		DTO.setRemarks(String.valueOf(obj.get("remarks")));
 		
-		DTO.setStart_date(getFormattedDate(String.valueOf(obj.get("leave_start_date"))));
-		DTO.setEnd_date(getFormattedDate(String.valueOf(obj.get("leave_end_date"))));
-
-		DTO.setTotalNoOfDays(getBalance(String.valueOf(obj.get("total_days"))));
+	//	double totalDays = Double.valueOf(obj.get("total_days").toString());
+//		DTO.setTotal_days((int) totalDays);
 		
 		return DTO;
 	}
@@ -83,7 +79,7 @@ public class AdminDaoImpl implements AdminDao {
 		final DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy");
 		final ZonedDateTime parsed = ZonedDateTime.parse(date, inputFormat);
 		final DateTimeFormatter outputFormat1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		
+
 		return outputFormat1.format(parsed);
 	}
 
@@ -94,42 +90,28 @@ public class AdminDaoImpl implements AdminDao {
 		return valueOf;
 	}
 
-	private void setEmployeeName(LeaveDetailsDTO leaveDetailsDTO) {
-		DBObject query = BasicDBObjectBuilder.start().add("_id", leaveDetailsDTO.getEmp_id()).get();
+	private void setEmployeeName(EmpAppliedLeaveDTO empAppliedLeaveDTO) {
+		DBObject query = BasicDBObjectBuilder.start().add("_id", empAppliedLeaveDTO.getEmp_id()).get();
 
 		DBCollection collection = MongoFactory.getDBCollection("employee");
 		DBCursor dbCursor = collection.find(query);
 
 		while (dbCursor.hasNext()) {
 			DBObject obj = dbCursor.next();
-			leaveDetailsDTO.setEmp_name(String.valueOf(obj.get("emp_name")));
-		}
-
-	}
-
-	private void setLeaveTypeName(LeaveDetailsDTO leaveDetailsDTO) {
-		DBObject query = BasicDBObjectBuilder.start().add("_id", leaveDetailsDTO.getLeave_id()).get();
-
-		DBCollection collection = MongoFactory.getDBCollection("leave");
-		DBCursor dbCursor = collection.find(query);
-
-		while (dbCursor.hasNext()) {
-			DBObject obj = dbCursor.next();
-			leaveDetailsDTO.setLeave_type_name(String.valueOf(obj.get("leave")));
-			leaveDetailsDTO.setTotal_leaves(String.valueOf(obj.get("leave_days")));
+			empAppliedLeaveDTO.setEmp_name(String.valueOf(obj.get("emp_name")));
 		}
 
 	}
 
 	@Override
-	public void updateLeaveDetails(LeaveDetailsDTO leaveDtlDto) {
-		
+	public void updateLeaveDetails(EmployeeLeaveDetailsDTO leaveDtlDto) {
+
 		DBCollection collection = MongoFactory.getDBCollection("emp_leaves_details");
 
 		BasicDBObject existing = (BasicDBObject) collection.findOne(leaveDtlDto.get_id());
 
 		BasicDBObject obj = new BasicDBObject();
-		
+
 		obj.put("_id", leaveDtlDto.get_id());
 		obj.put("emp_id", leaveDtlDto.getEmp_id());
 		obj.put("leave_id", leaveDtlDto.getLeave_id());
@@ -145,7 +127,7 @@ public class AdminDaoImpl implements AdminDao {
 	}
 
 	@Override
-	public LeaveDetailsDTO getLeaveDetailsDTOById(Integer id) {
+	public EmployeeLeaveDetailsDTO getLeaveDetailsDTOById(Integer id) {
 
 		DBObject query = BasicDBObjectBuilder.start().add("_id", id).get();
 
@@ -155,9 +137,9 @@ public class AdminDaoImpl implements AdminDao {
 		while (dbCursor.hasNext()) {
 			DBObject obj = dbCursor.next();
 
-			LeaveDetailsDTO DTO = prepareLeaveDetailsDTO(obj);
+	//		EmployeeLeaveDetailsDTO DTO = prepareLeaveDetailsDTO(obj);
 
-			return DTO;
+			return null;	// DTO;
 		}
 		return null;
 	}

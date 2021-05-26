@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -16,37 +17,45 @@
 
 	<br />
 
+	<form action="/submitLeaves" method="post">
+	<div>
 	<table border="2" width="95%" cellpadding="2" align="center">
 		<tr>
 			<th>Emp ID</th>
 			<th>Emp Name</th>
 			<th>Applied Leave</th>
-			<th>Total Leaves</th>
-			<th>Leaves Taken</th>
-			<th>Leaves Balance</th>
 			<th>Leave Start Date</th>
 			<th>Leave End Date</th>
 			<th>Total Days</th>
-			<td>Action</td>
+			<th>Remarks</th>
+			<th>Action</th>
 		</tr>
 		<c:forEach var="pending" items="${pendingLeaveList}">
 			<tr>
 				<td>${pending.emp_id}</td>
 				<td>${pending.emp_name}</td>
-				<td>${pending.leave_type_name}</td>
-				<td>${pending.total_leaves}</td>
-				<td>${pending.leave_taken}</td>
-				<td>${pending.current_balance}</td>
-				<td>${pending.start_date}</td>
-				<td>${pending.end_date}</td>
-				<td>${pending.totalNoOfDays}</td>
-				<td>
-					<a href="approveLeaves/${pending._id}"> Approve </a>
-					<a href="rejectLeaves/${pending._id}"> Reject </a>
-				</td>
+				<td>${pending.leave_type}</td>
+				<td>${pending.leave_start_date}</td>
+				<td>${pending.leave_end_date}</td>
+				<td>${pending.total_days}</td>
+				<td><input type="text" value=${pending.remarks } /></td>
+				<td><select name="status" id="status">
+						<option value="">--- Select ---</option>
+						<option value="approve">Approve</option>
+						<option value="reject">Reject</option>
+				</select></td>
 			</tr>
 		</c:forEach>
+		<tr>
+			<td colspan="10" align="center">
+				<div>
+					<button type="submit">Submit</button>
+				</div>
+			</td>
+		</tr>
 	</table>
-
+	</div>
+	</form>
+	
 </body>
 </html>

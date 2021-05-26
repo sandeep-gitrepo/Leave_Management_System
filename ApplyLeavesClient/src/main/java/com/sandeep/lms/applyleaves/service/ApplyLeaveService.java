@@ -5,7 +5,7 @@ package com.sandeep.lms.applyleaves.service;
 
 import java.util.List;
 
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 /**
  * @author sandeep.kumar
@@ -13,12 +13,12 @@ import com.sandeep.lms.dto.LeaveDetailsDTO;
  */
 public interface ApplyLeaveService {
 	
-	List<LeaveDetailsDTO> getLeaveBalanceByEmpID(Integer emp_id);
+	List<EmployeeLeaveDetailsDTO> getLeaveBalanceByEmpID(Integer emp_id);
 
-	void applyLeave(LeaveDetailsDTO leaveDetails);
+	void applyLeave(EmployeeLeaveDetailsDTO leaveDetails);
 	
-	void cancelLeave(LeaveDetailsDTO leaveDetailsDTO);
+	void cancelLeave(EmployeeLeaveDetailsDTO leaveDetailsDTO);
 	
-	void updateLeave(LeaveDetailsDTO leaveDetailsDTO);
+	void updateLeave(EmployeeLeaveDetailsDTO leaveDetailsDTO);
 	
 }

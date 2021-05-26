@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 /**
  * @author sandeep.a.kumar
@@ -30,42 +30,42 @@ public class ApplyLeavesRestClient {
 
 	static final String MAIN_RESOURCE_URI = "http://localhost:8102/test/leaves/";
 
-	public List<LeaveDetailsDTO> getLeaveBalanceByEmpID(Integer emp_id) {
+	public List<EmployeeLeaveDetailsDTO> getLeaveBalanceByEmpID(Integer emp_id) {
 		LOGGER.info("ApplyLeavesRestClient: getLeaveBalance() method called ==========");
 
 		RestTemplate restTemplate = new RestTemplate();
 		
-		ResponseEntity<LeaveDetailsDTO[]> response = restTemplate
-				.getForEntity(MAIN_RESOURCE_URI + "/getallleaves/{emp_id}", LeaveDetailsDTO[].class);
+		ResponseEntity<EmployeeLeaveDetailsDTO[]> response = restTemplate
+				.getForEntity(MAIN_RESOURCE_URI + "/getallleaves/{emp_id}", EmployeeLeaveDetailsDTO[].class);
 		
-		LeaveDetailsDTO[] list = response.getBody();
+		EmployeeLeaveDetailsDTO[] list = response.getBody();
 
 		return Arrays.asList(list);
 	}
 
-	public void applyLeave(LeaveDetailsDTO leaveDetails) {
+	public void applyLeave(EmployeeLeaveDetailsDTO leaveDetails) {
 		LOGGER.info("ApplyLeavesRestClient: applyLeave() method called ==========");
 
 		// REST-CALL
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.postForObject(MAIN_RESOURCE_URI + "/applyLeave", leaveDetails, LeaveDetailsDTO.class);
+		restTemplate.postForObject(MAIN_RESOURCE_URI + "/applyLeave", leaveDetails, EmployeeLeaveDetailsDTO.class);
 
 	}
 
-	public void cancelLeave(LeaveDetailsDTO leaveDetails) {
+	public void cancelLeave(EmployeeLeaveDetailsDTO leaveDetails) {
 		LOGGER.info("ApplyLeavesRestClient: cancelLeave() method called ==========");
 
 		// REST-CALL
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.postForObject(MAIN_RESOURCE_URI + "/deleteleave", leaveDetails, LeaveDetailsDTO.class);
+		restTemplate.postForObject(MAIN_RESOURCE_URI + "/deleteleave", leaveDetails, EmployeeLeaveDetailsDTO.class);
 	}
 
-	public void updateLeave(LeaveDetailsDTO leaveDetails) {
+	public void updateLeave(EmployeeLeaveDetailsDTO leaveDetails) {
 		LOGGER.info("ApplyLeavesRestClient: updateLeave() method called ==========");
 
 		// REST-CALL
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.postForObject(MAIN_RESOURCE_URI + "/updateleave", leaveDetails, LeaveDetailsDTO.class);
+		restTemplate.postForObject(MAIN_RESOURCE_URI + "/updateleave", leaveDetails, EmployeeLeaveDetailsDTO.class);
 
 	}
 

@@ -5,7 +5,8 @@ package com.sandeep.lms.admin.service;
 
 import java.util.List;
 
-import com.sandeep.lms.dto.LeaveDetailsDTO;
+import com.sandeep.lms.dto.EmpAppliedLeaveDTO;
+import com.sandeep.lms.dto.EmployeeLeaveDetailsDTO;
 
 /**
  * @author sandeep.a.kumar
@@ -13,10 +14,10 @@ import com.sandeep.lms.dto.LeaveDetailsDTO;
  */
 public interface AdminService {
 
-	List<LeaveDetailsDTO> getLeavesByLeaveStatus(String leave_status);
+	List<EmpAppliedLeaveDTO> getLeavesByLeaveStatus(String leave_status);
 
-	void updateLeaveDetails(LeaveDetailsDTO leaveDtlDto);
+	void updateLeaveDetails(EmployeeLeaveDetailsDTO leaveDtlDto);
 
-	LeaveDetailsDTO getLeaveDetailsDTOById(Integer id);
+	EmployeeLeaveDetailsDTO getLeaveDetailsDTOById(Integer id);
 	
 }

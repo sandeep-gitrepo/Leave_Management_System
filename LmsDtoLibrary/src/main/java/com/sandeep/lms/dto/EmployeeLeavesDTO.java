@@ -9,11 +9,11 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * @author sandeep.a.kumar
+ * @author sandeep.kumar
  *
  */
-@Document(collection = "emp_leaves_details")
-public class EmployeeLeaveDetailsDTO implements Serializable {
+@Document(collection = "employee_leaves")
+public class EmployeeLeavesDTO implements Serializable {
 
 	/**
 	 * 
@@ -23,23 +23,16 @@ public class EmployeeLeaveDetailsDTO implements Serializable {
 	@Id
 	private Integer _id;
 	private Integer emp_id;
-	private String emp_name;
 	private Integer leave_id;
 	private String leave_type_name;
 	private String current_balance;
 	private String leave_taken;
-	private Integer applied_leaves;
-	private String start_date;
-	private String end_date;
-	private String totalNoOfDays;
 	private String total_leaves;
-	private String status;
-	private String remarks;
 
 	/**
 	 * 
 	 */
-	public EmployeeLeaveDetailsDTO() {
+	public EmployeeLeavesDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -57,14 +50,6 @@ public class EmployeeLeaveDetailsDTO implements Serializable {
 
 	public void setEmp_id(Integer emp_id) {
 		this.emp_id = emp_id;
-	}
-
-	public String getEmp_name() {
-		return emp_name;
-	}
-
-	public void setEmp_name(String emp_name) {
-		this.emp_name = emp_name;
 	}
 
 	public Integer getLeave_id() {
@@ -99,60 +84,12 @@ public class EmployeeLeaveDetailsDTO implements Serializable {
 		this.leave_taken = leave_taken;
 	}
 
-	public Integer getApplied_leaves() {
-		return applied_leaves;
-	}
-
-	public void setApplied_leaves(Integer applied_leaves) {
-		this.applied_leaves = applied_leaves;
-	}
-
-	public String getStart_date() {
-		return start_date;
-	}
-
-	public void setStart_date(String start_date) {
-		this.start_date = start_date;
-	}
-
-	public String getEnd_date() {
-		return end_date;
-	}
-
-	public void setEnd_date(String end_date) {
-		this.end_date = end_date;
-	}
-
-	public String getTotalNoOfDays() {
-		return totalNoOfDays;
-	}
-
-	public void setTotalNoOfDays(String totalNoOfDays) {
-		this.totalNoOfDays = totalNoOfDays;
-	}
-
 	public String getTotal_leaves() {
 		return total_leaves;
 	}
 
 	public void setTotal_leaves(String total_leaves) {
 		this.total_leaves = total_leaves;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getRemarks() {
-		return remarks;
-	}
-
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
 	}
 
 }

@@ -20,14 +20,16 @@ public class EmployeeDTO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	private Integer empId;    
-	private String empName;    
-	private Float ctc;    
-	private String designation; 
-	private String department; 
-	
+	private Integer empId;
+	private String empName;
+	private Float ctc;
+	private String designation;
+	private String department;
+	private String email;
+	private String password;
+
 	public EmployeeDTO() {
 		// TODO Auto-generated constructor stub
 	}
@@ -71,6 +73,21 @@ public class EmployeeDTO implements Serializable {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-	
-	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 }
