@@ -17,8 +17,8 @@ public class MongoFactory {
 	private static Mongo mongo;
 	
 	private static Integer MONGO_PORT_NO = 27017;
-	private static String MONGO_HOST_NAME = "localhost";
-//	private static String MONGO_HOST_NAME = "mongohost";	
+//	private static String MONGO_HOST_NAME = "localhost";
+	private static String MONGO_HOST_NAME = "mongohost";	
 	private static String MONGO_DATABASE = "lmsDB";
 	
 	public MongoFactory() {
