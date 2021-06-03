@@ -1,0 +1,22 @@
+version: "3"
+services:
+  db:
+    image: mongo
+    container_name: "mongohost"
+    ports:
+      - 27017:27017
+    restart:
+      on-failure
+  api:
+    image: ems
+    container_name: "EmpMngSys"
+    ports:
+      - 8010:8080
+    restart:
+      on-failure
+    links:
+            - "db"
+networks:
+  default:
+    external: true
+    name: lmsnetwork
