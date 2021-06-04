@@ -22,8 +22,8 @@ public class LMSAdminController {
 	@Autowired
 	private AdminService adminService;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String homePage(Model model) {
+	@RequestMapping(value = "/")
+	public String homePage() {
 
 		return "adminPage";
 	}

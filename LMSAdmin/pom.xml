@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sandeep.lms.core</groupId>
-	<artifactId>LMSCore</artifactId>
+	<artifactId>lmsAdmin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -88,6 +88,8 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
 
 		<!-- Tomcat embedded container -->
@@ -100,11 +102,8 @@
 	</dependencies>
 
 	<build>
-		<finalName>LMSCore</finalName>
+		<finalName>lmsAdmin</finalName>
 		<plugins>
-			<!-- The spring-boot-maven-plugin provides Spring Boot support in Maven, 
-				allowing us to package executable JAR or WAR archives. Its spring-boot:run 
-				goal runs the Spring Boot application. -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
