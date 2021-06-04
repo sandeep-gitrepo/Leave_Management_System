@@ -1,21 +1,39 @@
 version: "3"
 services:
-  db:
-    image: mongo
+  mongo_db:
+    image: lms_mongo_db
     container_name: "mongohost"
     ports:
       - 27017:27017
     restart:
       on-failure
-  api:
-    image: ems
+  ems_api:
+    image: emp_mng_sys
     container_name: "EmpMngSys"
     ports:
       - 8010:8080
     restart:
       on-failure
     links:
-            - "db"
+            - "mongo_db"
+  admin_api:
+    image: lms_admin
+    container_name: "LMSAdmin"
+    ports:
+      - 8020:4050
+    restart:
+      on-failure
+    links:
+            - "mongo_db"
+  client_api:
+    image: lms_leaves_client
+    container_name: "LMSLeavesClient"
+    ports:
+      - 8030:8080
+    restart:
+      on-failure
+    links:
+            - "mongo_db"                        
 networks:
   default:
     external: true

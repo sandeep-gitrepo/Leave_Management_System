@@ -1,0 +1,15 @@
+ApplyLeavesClient/.project
+ApplyLeavesClient/target/
+EmpMngSys/.classpath
+EmpMngSys/.project
+EmpMngSys/.settings/
+EmpMngSys/bin/
+EmpMngSys/target/
+LMSAdmin/.project
+LMSAdmin/.settings/
+LMSAdmin/target/
+LmsDtoLibrary/.project
+LmsDtoLibrary/target/
+.metadata/
+LMSAdmin/.classpath
+LmsDtoLibrary/.settings/
